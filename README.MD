@@ -7,7 +7,7 @@ Just how much effect do you have on your community?
 ```
 npm install -g browserify beefy
 npm install
-beefy --live
+beefy main.js --live
 ```
 
 ### Libraries
