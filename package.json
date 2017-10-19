@@ -1,0 +1,26 @@
+{
+  "name": "ripple-effect",
+  "version": "0.0.1",
+  "description": "Community Ripple Effect Calculator",
+  "main": "main.js",
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "survey-react": "^0.12.32",
+    "uniq": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/squeedee/CRSurvey.git"
+  },
+  "author": "Rashee Abdul-Aziz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/squeedee/CRSurvey/issues"
+  },
+  "homepage": "https://github.com/squeedee/CRSurvey#readme"
+}

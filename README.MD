@@ -2,6 +2,14 @@
 
 Just how much effect do you have on your community?
 
+## Test operation
+
+```
+npm install -g browserify beefy
+npm install
+beefy --live
+```
+
 ### Libraries
 
   * Survey.js
