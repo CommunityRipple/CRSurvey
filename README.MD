@@ -5,9 +5,8 @@ Just how much effect do you have on your community?
 ## Test operation
 
 ```
-npm install -g browserify beefy
 npm install
-beefy main.js --live
+npm start
 ```
 
 ### Libraries
