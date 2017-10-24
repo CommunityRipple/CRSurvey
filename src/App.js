@@ -12,8 +12,7 @@ export default class App extends Component {
 
     constructor(props) {
         super(props);
-        var surveyModel = new Survey.Model({
-
+        const surveyModel = new Survey.ReactSurveyModel({
             pages: [
                 {
                     elements: [
@@ -37,7 +36,10 @@ export default class App extends Component {
     render() {
         return (
             <Layout>
-                <Survey.Survey model={this.state.model}/>
+                <link rel="stylesheet" type="text/css" href="/style/App.css"/>
+                <div className="survey">
+                    <Survey.Survey className="ddd" model={this.state.model}/>
+                </div>
             </Layout>
         );
     }
