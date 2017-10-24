@@ -1,5 +1,10 @@
+# don't cache packages
 node_modules
 npm-debug.log
-.DS_Store
+
+# Build artifacts
 dist
+
+# OSX junk
+.DS_Store
 *.swp
