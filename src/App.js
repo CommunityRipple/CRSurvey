@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Layout from './Layout';
-import {Model, Survey} from 'survey-react';
+import * as Survey from 'survey-react';
 
 // If you use React Router, make this component
 // render <Router> with your routes. Currently,
@@ -12,7 +12,7 @@ export default class App extends Component {
 
     constructor(props) {
         super(props);
-        var surveyModel = new Model({
+        var surveyModel = new Survey.Model({
 
             pages: [
                 {
@@ -28,13 +28,16 @@ export default class App extends Component {
             ]
         });
 
+        Survey.Survey.cssType = "bootstrap";
+        Survey.defaultBootstrapCss.navigationButton = "btn btn-green";
+
         this.state = {model: surveyModel}
     }
 
     render() {
         return (
             <Layout>
-                <Survey model={this.state.model}/>
+                <Survey.Survey model={this.state.model}/>
             </Layout>
         );
     }
