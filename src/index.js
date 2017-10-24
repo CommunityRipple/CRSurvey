@@ -6,8 +6,10 @@ import App from './App';
 const rootEl = document.getElementById('root');
 const render = Component =>
   ReactDOM.render(
+    <AppContainer>
       <Component />
-,    rootEl
+    </AppContainer>,
+    rootEl
   );
 
 render(App);
