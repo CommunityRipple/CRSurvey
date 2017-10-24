@@ -10,6 +10,5 @@ npm start
 ```
 
 ### Libraries
-
-  * Survey.js
-  * React.js
+Using Survey JS for survey component
+Using React, Webpack and webpack hot-reload as a framework
