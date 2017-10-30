@@ -44,9 +44,9 @@ module.exports = {
                 use: [
                     {
                         loader: 'file-loader',
-                        options: {
-                            limit: 10240,
-                        },
+                        // options: {
+                        //     limit: 10240,
+                        // },
                     },
                 ]
             },

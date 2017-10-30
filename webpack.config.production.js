@@ -8,6 +8,11 @@ const extractSass = new ExtractTextPlugin({
     disable: process.env.NODE_ENV === "development"
 });
 
+const uglifyJs = new webpack.optimize.UglifyJsPlugin({
+    sourceMap: true,
+    comments: false
+});
+
 module.exports = {
     entry: './src/index.js',
 
@@ -24,31 +29,34 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 use: [
-                    'babel-loader'
+                    'babel-loader',
                 ],
-                exclude: /node_modules/
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.(eot|ttf|woff2?|gif|png|jpe?g|svg|webp)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            limit: 10240,
+                        },
+                    },
+                ]
             },
             {
                 test: /\.scss$/,
                 use: extractSass.extract({
-                    use: [{
-                        loader: "css-loader"
-                    }, {
-                        loader: "sass-loader"
-                    }],
+                    use: ["css-loader", "sass-loader"],
                     // use style-loader in development
                     fallback: "style-loader"
                 })
             }
-        ]
+        ],
     },
 
     plugins: [
         extractSass,
-
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            comments: false
-        })
+        uglifyJs
     ]
 };
