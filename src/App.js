@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Layout from './Layout';
 import * as Survey from 'survey-react';
 
+require('../sass/app.scss');
+
 // If you use React Router, make this component
 // render <Router> with your routes. Currently,
 // only synchronous routes are hot reloaded, and
@@ -12,7 +14,7 @@ export default class App extends Component {
 
     constructor(props) {
         super(props);
-        const surveyModel = new Survey.ReactSurveyModel(
+        this.surveyModel = new Survey.ReactSurveyModel(
             {
                 pages: [
                     {
@@ -401,16 +403,14 @@ export default class App extends Component {
 
         Survey.Survey.cssType = "bootstrap";
         Survey.defaultBootstrapCss.navigationButton = "btn btn-green";
-
-        this.state = {model: surveyModel}
     }
 
     render() {
         return (
             <Layout>
-                <link rel="stylesheet" type="text/css" href="/style/App.css"/>
+                <link rel="stylesheet" type="text/css" href="/sass/app.scss"/>
                 <div className="survey">
-                    <Survey.Survey className="ddd" model={this.state.model}/>
+                    <Survey.Survey className="ddd" model={this.surveyModel}/>
                 </div>
             </Layout>
         );

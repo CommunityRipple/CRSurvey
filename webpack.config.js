@@ -40,14 +40,19 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.css$/,
-                use: [ 'style-loader', 'css-loader' ]
+                test: /\.(eot|ttf|woff2?|gif|png|jpe?g|svg|webp)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            limit: 10240,
+                        },
+                    },
+                ]
             },
             {
-                test: /\.(gif|png|jpe?g|svg|webp)$/i,
-                use: [
-                    'file-loader',
-                ]
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
             },
         ],
     },
