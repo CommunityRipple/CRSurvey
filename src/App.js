@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Layout from './Layout';
 import * as Survey from 'survey-react';
+import {Row, Col} from 'react-bootstrap';
 
 require('../sass/app.scss');
 
@@ -408,10 +409,13 @@ export default class App extends Component {
     render() {
         return (
             <Layout>
-                <link rel="stylesheet" type="text/css" href="/sass/app.scss"/>
-                <div className="survey">
-                    <Survey.Survey className="ddd" model={this.surveyModel}/>
-                </div>
+                <Row className="survey">
+                    <Col md={2} />
+                    <Col md={8}>
+                        <Survey.Survey className="Panel" model={this.surveyModel}/>
+                    </Col>
+                    <Col md={2} />
+                </Row>
             </Layout>
         );
     }
