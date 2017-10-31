@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid as Container} from 'react-bootstrap';
+import {Grid as Container, PageHeader} from 'react-bootstrap';
 
 export default function Layout({children}) {
     return (

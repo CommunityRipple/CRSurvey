@@ -1,3 +1,7 @@
+
+$panel-default-border: none;
+$panel-bg: none;
+
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
@@ -6,3 +10,6 @@ body {
     background-size: 100%;
 }
 
+.top-row {
+    margin-top: 10vh;
+}
