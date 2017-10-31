@@ -409,12 +409,12 @@ export default class App extends Component {
     render() {
         return (
             <Layout>
-                <Row className="survey">
-                    <Col md={2} />
+                <Row>
+                    <Col md={2}/>
                     <Col md={8}>
-                        <Survey.Survey className="Panel" model={this.surveyModel}/>
+                         <Survey.Survey css={{root: "panel panel-default"}} model={this.surveyModel}/>
                     </Col>
-                    <Col md={2} />
+                    <Col md={2}/>
                 </Row>
             </Layout>
         );
