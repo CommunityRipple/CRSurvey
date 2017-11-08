@@ -1,15 +1,39 @@
-
 $panel-default-border: none;
 $panel-bg: none;
 
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "~compass-mixins/lib/compass";
 
-body {
-    background-image: url("/img/surveybackground.jpg");
-    background-size: 100%;
+.bg-gradient {
+  background-color: #a5e6ec; // Old browsers
+  @include filter-gradient(#a5e6ec, #32b9f9, vertical); // IE6-8
+  @include background-image(linear-gradient(top, #a5e6ec 0%, #32b9f9 100%));
+  width: 100%;
+  height: 100%;
+  position: fixed;
 }
 
 .top-row {
-    margin-top: 10vh;
+  margin-top: 10vh;
+}
+
+.bg-image {
+  position: fixed;
+}
+
+.bg-ground {
+  bottom: 0;
+  width: 100%;
+  height: auto;
+}
+
+.bg-cloud-left {
+  top: 9vh;
+  left: 2vw;
+}
+
+.bg-cloud-right {
+  top: 3vh;
+  right: 3vw;
 }
