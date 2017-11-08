@@ -33,9 +33,6 @@ module.exports = {
                 use: [
                     {
                         loader: 'file-loader',
-                        // options: {
-                        //     limit: 10240,
-                        // },
                     },
                 ]
             },
@@ -59,20 +56,12 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
-
-        // new webpack.NoEmitOnErrorsPlugin(),
-        // do not emit compiled assets that include errors
-
     ],
 
     devServer: {
         host: 'localhost',
         port: 3000,
-
         historyApiFallback: true,
-        // respond to 404s with index.html
-
         hot: true,
-        // enable HMR on the server
     },
 };
