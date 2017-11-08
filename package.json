@@ -38,7 +38,8 @@
     "lint": "eslint src",
     "prebuild": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.production.js",
-    "postbuild": "copyfiles index.html dist"
+    "postbuild": "copyfiles index.html dist",
+    "update-survey": "curl https://dxsurveyapi.azurewebsites.net/api/Survey/getSurvey?surveyId=7da3d70b-c4d2-4409-85a1-27353475c64d -o src/survey.json"
   },
   "repository": {
     "type": "git",
