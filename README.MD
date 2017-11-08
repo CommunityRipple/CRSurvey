@@ -18,25 +18,28 @@ Assumes OSX/Linux
 
 0. Install `curl`, `git` and `npm`
   * On OSX:
+  
     ```
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew install curl npm git
     ```
   * On Ubuntu:
+
     ```
     apt-get install curl npm git-core 
     ```
-0. Get this and install deps  
+0. Get this and install deps
+  
   ```
   git clone git@github.com:CommunityRipple/RippleEffect.git
   cd RippleEffect
   npm install
   ```
-0. See available scripts
+0. See available scripts:
   ```
   npm run-script
   ```
-0. Run local dev version
+0. Run local dev version:
   ```
   npm start  
   ```
