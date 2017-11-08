@@ -43,7 +43,19 @@ Assumes OSX/Linux
   ```
   npm start  
   ```
+  
+## Deploy
 
+0. Build the distribution code:
+  ```
+  npm run build:all
+  ```
+
+0. deploy to development environment
+  ```
+  npm run deploy:dev
+  ```
+  
 ### Libraries
 Using Survey JS for survey component
 Using React, Webpack and webpack hot-reload as a framework

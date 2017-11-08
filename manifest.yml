@@ -1,0 +1,12 @@
+---
+applications:
+- name: ripple-effect-dev
+  memory: 64M
+  instances: 1
+  env:
+    NODE_ENV: development
+- name: ripple-effect
+  memory: 64M
+  instances: 3
+  env:
+    NODE_ENV: production

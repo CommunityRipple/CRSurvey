@@ -1,28 +1,32 @@
 var path = require('path');
 var webpack = require('webpack');
 
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
-const extractSass = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css",
-    disable: process.env.NODE_ENV === "development"
-});
 
 const uglifyJs = new webpack.optimize.UglifyJsPlugin({
     sourceMap: true,
     comments: false
 });
 
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+// TODO: vendor and app styles as seperate files
+const extractSass = new ExtractTextPlugin({
+    filename: "style.css",
+    disable: false,
+});
+
 module.exports = {
-    entry: './src/index.js',
+    entry: [
+        './src/index.js',
+    ],
 
     output: {
-        filename: 'static/bundle.js',
-        path: path.resolve(__dirname, 'dist'),
-        publicPath: '/'
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist/assets'),
+        publicPath: '/assets/'
     },
 
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
 
     module: {
         rules: [
@@ -47,16 +51,24 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: extractSass.extract({
-                    use: ["css-loader", "sass-loader"],
-                    // use style-loader in development
-                    fallback: "style-loader"
-                })
-            }
+                    use: [{
+                        loader: "css-loader", options: {
+                            sourceMap: true
+                        }
+                    }, {
+                        loader: "sass-loader", options: {
+                            sourceMap: true
+                        }
+                    }],
+                    fallback: "style-loader",
+                }),
+
+            },
         ],
     },
 
     plugins: [
         extractSass,
-        uglifyJs
-    ]
+        uglifyJs,
+    ],
 };

@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import Layout from './Layout';
 import LayoutRow from './LayoutRow'
 import * as Survey from 'survey-react';
-
-require('../sass/app.scss');
+import '../sass/app.scss';
 
 const surveyData = require('./survey.json');
 
